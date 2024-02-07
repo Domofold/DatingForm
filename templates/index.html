@@ -1,21 +1,25 @@
  <!DOCTYPE html>
  <html>
+ <head>
+    <link rel="stylesheet" href="../static/styles.css">
+ </head>
 
- <form>
-     <label for="imie">Jak masz na imię?</label>
-     <input id="imie">
+ <div class="form">
+     <form>
+     <label for="name">Jak masz na imię?</label>
+     <input id="name" class="form-input">
 
-     <label for="wiek"> Ile masz lat</label>
-     <input id="wiek">
+     <label for="age"> Ile masz lat</label>
+     <input id="age" class="form-input">
 
-     <label for="płeć"> Identyfikacja płciowa </label>
-     <input id="płeć">
+     <label for="gender"> Twoja identyfikacja płciowa </label>
+     <input id="gender" class="form-input">
 
-     <label for="zamieszkanie">W jakiej miejscowości mieszkasz?</label>
-     <input id="zamieszkanie ?">
+     <label for="dwelling-place">W jakiej miejscowości mieszkasz?</label>
+     <input id="dwelling-place" class="form-input">
 
-     <label for="wybór">Jaką masz dietę?</label>
-     <select id="wybór">
+     <label for="diet">Jaką masz dietę?</label>
+     <select id="diet" class="form-input">
          <option value="--">--</option>
          <option value="wszystkożerna">wszystkożerna</option>
          <option value="wegetariańska">wegetariańska</option>
@@ -25,5 +29,7 @@
          <option value="ketogeniczna">ketogeniczna</option>
      </select>
  </form>
+
+ </div>
 
  </html>
