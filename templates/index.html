@@ -1,35 +1,45 @@
  <!DOCTYPE html>
- <html>
+ <html lang="pl">
  <head>
-    <link rel="stylesheet" href="../static/styles.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
  </head>
 
- <div class="form">
-     <form>
-     <label for="name">Jak masz na imię?</label>
-     <input id="name" class="form-input">
+<body class="bg-dark text-light">
+     <form class="container col-sm-4">
+         <div class="mb-3">
+             <label for="name" class="form-label">Jak masz na imię?</label>
+             <input type="text" id="name" class="form-control">
+         </div>
 
-     <label for="age"> Ile masz lat</label>
-     <input id="age" class="form-input">
+         <div class="mb-3">
+             <label for="age" class="form-label"> Ile masz lat</label>
+             <input id="age" class="form-control">
+         </div>
 
-     <label for="gender"> Twoja identyfikacja płciowa </label>
-     <input id="gender" class="form-input">
+         <div class="mb-3">
+             <label for="gender" class="form-label"> Twoja identyfikacja płciowa </label>
+             <input id="gender" class="form-control">
+         </div>
 
-     <label for="dwelling-place">W jakiej miejscowości mieszkasz?</label>
-     <input id="dwelling-place" class="form-input">
+         <div class="mb-3">
+             <label for="dwelling-place" class="form-label">W jakiej miejscowości mieszkasz?</label>
+             <input id="dwelling-place" class="form-control">
+         </div>
 
-     <label for="diet">Jaką masz dietę?</label>
-     <select id="diet" class="form-input">
-         <option value="--">--</option>
-         <option value="wszystkożerna">wszystkożerna</option>
-         <option value="wegetariańska">wegetariańska</option>
-         <option value="fleksitariańska">fleksitariańska</option>
-         <option value="wegańska">wegańska</option>
-         <option value="owocowa">owocowa</option>
-         <option value="ketogeniczna">ketogeniczna</option>
-     </select>
- </form>
+         <label for="diet" class="form-label">Jaką masz dietę?</label>
+         <select id="diet" class="form-select">
+             <option value="--">--</option>
+             <option value="wszystkożerna">wszystkożerna</option>
+             <option value="wegetariańska">wegetariańska</option>
+             <option value="fleksitariańska">fleksitariańska</option>
+             <option value="wegańska">wegańska</option>
+             <option value="owocowa">owocowa</option>
+             <option value="ketogeniczna">ketogeniczna</option>
+         </select>
 
- </div>
+     </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
 
  </html>
