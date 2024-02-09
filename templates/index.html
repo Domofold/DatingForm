@@ -5,40 +5,56 @@
  </head>
 
 <body class="bg-dark text-light">
-     <form class="container col-sm-4">
-         <div class="mb-3">
-             <label for="name" class="form-label">Jak masz na imię?</label>
-             <input type="text" id="name" class="form-control">
-         </div>
+    <div class="container col-sm-4">
+         <form action="/" method="POST">
+             <div class="mb-3 mt-5">
+                 <label class="form-label">Jak masz na imię?</label>
+                 <input name="name" class="form-control">
+             </div>
 
-         <div class="mb-3">
-             <label for="age" class="form-label"> Ile masz lat</label>
-             <input id="age" class="form-control">
-         </div>
+             <div class="mb-3">
+                 <label class="form-label"> Ile masz lat</label>
+                 <input name="age" class="form-control">
+             </div>
 
-         <div class="mb-3">
-             <label for="gender" class="form-label"> Twoja identyfikacja płciowa </label>
-             <input id="gender" class="form-control">
-         </div>
+             <div class="mb-3">
+                 <label class="form-label"> Twoja identyfikacja płciowa </label>
+                 <input name="gender" class="form-control">
+             </div>
 
-         <div class="mb-3">
-             <label for="dwelling-place" class="form-label">W jakiej miejscowości mieszkasz?</label>
-             <input id="dwelling-place" class="form-control">
-         </div>
+             <div class="mb-3">
+                 <label class="form-label">W jakiej miejscowości mieszkasz?</label>
+                 <input name="dwelling_place" class="form-control">
+             </div>
 
-         <label for="diet" class="form-label">Jaką masz dietę?</label>
-         <select id="diet" class="form-select">
-             <option value="--">--</option>
-             <option value="wszystkożerna">wszystkożerna</option>
-             <option value="wegetariańska">wegetariańska</option>
-             <option value="fleksitariańska">fleksitariańska</option>
-             <option value="wegańska">wegańska</option>
-             <option value="owocowa">owocowa</option>
-             <option value="ketogeniczna">ketogeniczna</option>
-         </select>
+             <div class="mb-3">
+                 <label class="form-label">Co lubisz robić?</label>
+                 <input name="hobbies" class="form-control">
+             </div>
 
-     </form>
+             <div class="mb-3">
+                 <label class="form-label">Jaką masz dietę?</label>
+                 <select name="diet" class="form-select">
+                     <option value="--">--</option>
+                     <option value="wszystkożerna">wszystkożerna</option>
+                     <option value="wegetariańska">wegetariańska</option>
+                     <option value="fleksitariańska">fleksitariańska</option>
+                     <option value="wegańska">wegańska</option>
+                     <option value="owocowa">owocowa</option>
+                     <option value="ketogeniczna">ketogeniczna</option>
+                 </select>
+             </div>
 
+             <div class="mb-3">
+                 <label class="form-label">Jaki jest twój email?</label>
+                 <input name="email" class="form-control" type="email">
+             </div>
+
+             <div class="mt-5">
+                 <button type="submit" class="btn btn-primary">Wyślij</button>
+             </div>
+         </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
