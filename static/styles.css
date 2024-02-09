@@ -1,9 +1,15 @@
-.form {
-    text-align: center;
+* {
+    font-family: Chilanka, serif;
 }
 
-.form-input {
-    display: block;
-    margin: 5px auto 20px ;
+.title {
+    margin-top: 50px;
+}
+
+.titleFont {
+    color: indianred;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
 }
 

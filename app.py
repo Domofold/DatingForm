@@ -21,7 +21,7 @@ class Form(db.Model):
     diet = db.Column(
         db.Enum('wszystkożerna', 'wegańska', 'wegetariańska',
                 'fleksitariańska', 'owocowa', 'ketogeniczna'),
-        default='wszystkożerna')
+                default='wszystkożerna')
     email = db.Column(db.String(45))
 
 
