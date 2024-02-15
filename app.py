@@ -1,13 +1,11 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-import os
+from factories.MysqlConnectionFactory import MysqlConnectionFactory
+
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = (f"mysql://"
-                                         f"{os.getenv('DB_USER')}:"
-                                         f"{os.getenv('DB_USER_PASS')}"
-                                         f"@{os.getenv('DB_URL')}")
+app.config["SQLALCHEMY_DATABASE_URI"] = MysqlConnectionFactory().connect()
 db = SQLAlchemy(app)
 
 
