@@ -1,5 +1,5 @@
 from abc import abstractmethod, ABC
-from AbstractConnection import AbstractConnection
+from connections.AbstractConnection import AbstractConnection
 
 
 class ConnectionFactory(ABC):

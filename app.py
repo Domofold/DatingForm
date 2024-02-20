@@ -5,7 +5,7 @@ from factories.MysqlConnectionFactory import MysqlConnectionFactory
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = MysqlConnectionFactory().connect()
+app.config["SQLALCHEMY_DATABASE_URI"] = MysqlConnectionFactory().connect().connect()
 db = SQLAlchemy(app)
 
 
@@ -40,6 +40,11 @@ def form():
         db.session.add(datingform)
         db.session.commit()
     return render_template('index.html')
+
+
+@app.route('/sent-forms')
+def sent_forms():
+    return render_template('sentForms.html')
 
 
 if __name__ == '__main__':

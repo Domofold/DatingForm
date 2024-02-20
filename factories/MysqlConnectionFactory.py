@@ -1,5 +1,5 @@
-from ConnectionFactory import ConnectionFactory
-from MysqlConnection import MysqlConnection
+from factories.ConnectionFactory import ConnectionFactory
+from connections.MysqlConnection import MysqlConnection
 
 
 class MysqlConnectionFactory(ConnectionFactory):

@@ -1,4 +1,4 @@
-from AbstractConnection import AbstractConnection
+from connections.AbstractConnection import AbstractConnection
 import os
 
 
