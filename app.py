@@ -1,12 +1,27 @@
-from flask import Flask, render_template, request
+import os
+
+from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_httpauth import HTTPBasicAuth
 from factories.MysqlConnectionFactory import MysqlConnectionFactory
 
 
 app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = MysqlConnectionFactory().connect().connect()
+auth = HTTPBasicAuth()
 db = SQLAlchemy(app)
+
+users = {
+    "admin": "secret"
+}
+
+
+@auth.verify_password
+def verify_password(username, password):
+    if (username == os.getenv("SENT_FORMS_LOGIN") and
+            password == os.getenv("SENT_FORMS_PASS")):
+        return True
 
 
 class Form(db.Model):
@@ -43,6 +58,7 @@ def form():
 
 
 @app.route('/sent-forms')
+@auth.login_required
 def sent_forms():
     forms = Form.query.all()
     return render_template('sentForms.html', forms=forms)
