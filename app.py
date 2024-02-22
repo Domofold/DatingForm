@@ -44,7 +44,8 @@ def form():
 
 @app.route('/sent-forms')
 def sent_forms():
-    return render_template('sentForms.html')
+    forms = Form.query.all()
+    return render_template('sentForms.html', forms=forms)
 
 
 if __name__ == '__main__':
