@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% for form in forms %}
+        <div class="shownForms">
+            <h3>Form {{ form.idForm }}</h3>
+            <p>Imię: {{ form.name }}</p>
+            <p>Wiek: {{ form.age }}</p>
+            <p>Płeć: {{ form.gender }}</p>
+            <p>Miejsce zamieszkania: {{ form.dwelling_place }}</p>
+            <p>Zainteresowania: {{ form.hobbies }}</p>
+            <p>Dieta: {{ form.diet }}</p>
+            <p>Email: {{ form.email }}</p>
+        </div>
+    {% endfor %}
+    <div class="custom-link">
+         <a href="/">Form</a>
+         |
+         <a href="/sent-forms">Sent Forms</a>
+    </div>
+{% endblock %}
+
