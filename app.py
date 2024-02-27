@@ -12,10 +12,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = MysqlConnectionFactory().connect().conne
 auth = HTTPBasicAuth()
 db = SQLAlchemy(app)
 
-users = {
-    "admin": "secret"
-}
-
 
 @auth.verify_password
 def verify_password(username, password):
@@ -57,10 +53,13 @@ def form():
     return render_template('index.html')
 
 
-@app.route('/sent-forms')
+@app.route('/sent-forms', methods=["GET", "POST"])
 @auth.login_required
 def sent_forms():
     forms = Form.query.all()
+    if request.method == "POST":
+        diet = request.form['diet']
+        forms = Form.query.filter_by(diet=diet)
     return render_template('sentForms.html', forms=forms)
 
 

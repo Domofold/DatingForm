@@ -1,22 +1,59 @@
 {% extends "index.html" %}
 
 {% block content %}
-    {% for form in forms %}
-        <div class="shownForms">
-            <h3>Form {{ form.idForm }}</h3>
-            <p>Imię: {{ form.name }}</p>
-            <p>Wiek: {{ form.age }}</p>
-            <p>Płeć: {{ form.gender }}</p>
-            <p>Miejsce zamieszkania: {{ form.dwelling_place }}</p>
-            <p>Zainteresowania: {{ form.hobbies }}</p>
-            <p>Dieta: {{ form.diet }}</p>
-            <p>Email: {{ form.email }}</p>
+    <div id="filteredForms">
+        <div class="container col-sm-2">
+            <div class="filter">
+                <form id="filterForm" action="/sent-forms" method="POST">
+                    <select name="diet" id="diet" class="form-select">
+                     <option value="--">--</option>
+                     <option value="wszystkożerna">wszystkożerna</option>
+                     <option value="wegetariańska">wegetariańska</option>
+                     <option value="fleksitariańska">fleksitariańska</option>
+                     <option value="wegańska">wegańska</option>
+                     <option value="owocowa">owocowa</option>
+                     <option value="ketogeniczna">ketogeniczna</option>
+                </select>
+                </form>
+            </div>
+            <div>
+                {% for form in forms %}
+                    <div class="shownForms">
+                        <h3>Form {{ form.idForm }}</h3>
+                        <p>Imię: {{ form.name }}</p>
+                        <p>Wiek: {{ form.age }}</p>
+                        <p>Płeć: {{ form.gender }}</p>
+                        <p>Miejsce zamieszkania: {{ form.dwelling_place }}</p>
+                        <p>Zainteresowania: {{ form.hobbies }}</p>
+                        <p>Dieta: {{ form.diet }}</p>
+                        <p>Email: {{ form.email }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <nav class="custom-link">
+                 <a href="/">Form</a>
+                 |
+                 <a href="/sent-forms">Sent Forms</a>
+            </nav>
         </div>
-    {% endfor %}
-    <div class="custom-link">
-         <a href="/">Form</a>
-         |
-         <a href="/sent-forms">Sent Forms</a>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#diet').change(function() {
+                let selectedDiet = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    url: '/sent-forms',
+                    data: $('#filterForm').serialize(),
+                    success: function(response) {
+                        $('#filteredForms').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+
 {% endblock %}
 
