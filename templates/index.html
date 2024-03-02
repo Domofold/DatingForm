@@ -7,57 +7,70 @@
 
 <body class="bg-dark text-light">
     {% block content %}
-
-    <div class="container col-sm-4">
+    <div class="container col-4">
          <header>
             <div class="title">
                 <h1 class="titleFont">DATING FORM</h1>
             </div>
          </header>
          <main>
-             <article>
+             <article class="">
                  <form action="/" method="POST">
-                     <div class="mb-3 mt-5">
-                         <label class="form-label">Jak masz na imię?</label>
-                         <input name="name" class="form-control">
+                     <div class="mb-3 mt-5 row">
+                         <label class="form-label">
+                             Jak masz na imię?
+                             <input name="name" class="form-control">
+                         </label>
                      </div>
 
-                     <div class="mb-3">
-                         <label class="form-label"> Ile masz lat?</label>
-                         <input name="age" class="form-control">
+                     <div class="mb-3 row">
+                         <label class="form-label">
+                             Ile masz lat?
+                             <input name="age" class="form-control">
+                         </label>
                      </div>
 
-                     <div class="mb-3">
-                         <label class="form-label"> Twoja identyfikacja płciowa </label>
-                         <input name="gender" class="form-control">
+                     <div class="mb-3 row">
+                         <label class="form-label">
+                             Twoja identyfikacja płciowa
+                             <input name="gender" class="form-control">
+                         </label>
                      </div>
 
-                     <div class="mb-3">
-                         <label class="form-label">W jakiej miejscowości mieszkasz?</label>
-                         <input name="dwelling_place" class="form-control">
+                     <div class="mb-3 row">
+                         <label class="form-label">
+                             W jakiej miejscowości mieszkasz?
+                             <input name="dwelling_place" class="form-control">
+                         </label>
                      </div>
 
-                     <div class="mb-3">
-                         <label class="form-label">Co lubisz robić?</label>
-                         <input name="hobbies" class="form-control">
+                     <div class="mb-3 row">
+                         <label class="form-label">
+                             Co lubisz robić?
+                             <input name="hobbies" class="form-control">
+                         </label>
                      </div>
 
-                     <div class="mb-3">
+                     <div class="mb-3 row">
                          <label class="form-label">Jaką masz dietę?</label>
-                         <select name="diet" class="form-select">
-                             <option value="--">--</option>
-                             <option value="wszystkożerna">wszystkożerna</option>
-                             <option value="wegetariańska">wegetariańska</option>
-                             <option value="fleksitariańska">fleksitariańska</option>
-                             <option value="wegańska">wegańska</option>
-                             <option value="owocowa">owocowa</option>
-                             <option value="ketogeniczna">ketogeniczna</option>
-                         </select>
+                         <label>
+                             <select name="diet" class="form-select">
+                                 <option value="--">--</option>
+                                 <option value="wszystkożerna">wszystkożerna</option>
+                                 <option value="wegetariańska">wegetariańska</option>
+                                 <option value="fleksitariańska">fleksitariańska</option>
+                                 <option value="wegańska">wegańska</option>
+                                 <option value="owocowa">owocowa</option>
+                                 <option value="ketogeniczna">ketogeniczna</option>
+                             </select>
+                         </label>
                      </div>
 
-                     <div class="mb-3">
-                         <label class="form-label">Jaki jest twój email?</label>
-                         <input name="email" class="form-control" type="email">
+                     <div class="mb-3 row">
+                         <label class="form-label">
+                             Jaki jest twój email?
+                             <input name="email" class="form-control" type="email">
+                         </label>
                      </div>
 
                      <div class="mt-5">
