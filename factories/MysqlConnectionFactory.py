@@ -3,5 +3,5 @@ from connections.MysqlConnection import MysqlConnection
 
 
 class MysqlConnectionFactory(ConnectionFactory):
-    def connect(self):
+    def connection(self):
         return MysqlConnection()
